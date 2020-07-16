@@ -26,10 +26,18 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    mainwin.cpp \
+    background.cpp \
+    serchlineedit.cpp \
+    notecard.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    mainwin.h \
+    background.h \
+    serchlineedit.h \
+    notecard.h
 
 FORMS += \
         mainwindow.ui
@@ -38,3 +46,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    icon.qrc

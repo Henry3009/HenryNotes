@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/new/myicon">
+        <file>DeleteNote.png</file>
+        <file>AddNote.png</file>
+    </qresource>
+</RCC>

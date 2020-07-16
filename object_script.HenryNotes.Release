@@ -1,0 +1,12 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\mainwin.o
+./release\background.o
+./release\serchlineedit.o
+./release\notecard.o
+./release\qrc_icon.o
+./release\moc_mainwindow.o
+./release\moc_mainwin.o
+./release\moc_serchlineedit.o
+);

@@ -1,0 +1,12 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\mainwin.o
+./debug\background.o
+./debug\serchlineedit.o
+./debug\notecard.o
+./debug\qrc_icon.o
+./debug\moc_mainwindow.o
+./debug\moc_mainwin.o
+./debug\moc_serchlineedit.o
+);
