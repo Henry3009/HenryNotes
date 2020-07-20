@@ -4,7 +4,7 @@ SerchLineEdit::SerchLineEdit(QWidget *parent):QLineEdit(parent)
 {
     m_initContent = "搜索笔记列表...";
     this->setText(m_initContent);
-    this->setFixedHeight(50);
+    this->setFixedHeight(WIDTH_OF_NOTESERCH);
 }
 
 //----------------

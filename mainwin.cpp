@@ -12,6 +12,7 @@ MainWin::MainWin()
 
     //设置UI布局
     setUi();
+//    m_noteControl = NoteControl();
 }
 
 MainWin::~MainWin()
@@ -63,28 +64,52 @@ void MainWin::setUi()
     m_addNoteBtnBg->layout()->setAlignment(Qt::AlignCenter);
 
     /*添加笔记列表布局*/
-    m_noteCardListLayout = new QVBoxLayout(m_leftBg);
+    m_noteCardListLayout = new QVBoxLayout();
     m_lBgLayout->addSpacing(10);
     m_lBgLayout->addLayout(m_noteCardListLayout);
 
     /*信号与槽*/
     connect(m_addNoteBtn,SIGNAL(clicked()),this,SLOT(slotAddBtnClicked()));
+
+    //右背景板layout
+    m_rBgLayout = new QVBoxLayout(m_rightBg);
+    m_rBgLayout->setAlignment(Qt::AlignTop);
 }
 
-void MainWin::addNewToNoteList()
+//----------------
+//添加新的笔记和卡片
+//----------------
+void MainWin::addNewCardAndNote()
 {
-    NoteCard *newNoteCard = new NoteCard(this->m_leftBg);
+    //添加笔记
+    NoteEditWidget *w = new NoteEditWidget(m_rightBg);
+
+    //添加卡片
+    NoteCard *newNoteCard = new NoteCard(w,this->m_leftBg);
     newNoteCard->setBackGroundColor(QColor(255,178,115));
-    m_noteCardList.append(newNoteCard);
-    updateNoteCardListShow(newNoteCard);
-}
 
-//----------------
-//更新笔记列表显示
-//----------------
-void MainWin::updateNoteCardListShow(NoteCard *newNoteCard)
-{
-    m_noteCardListLayout->insertWidget(0,newNoteCard);
+
+    if(0 != m_noteControl.getCardCount())
+    {
+        //删除界面上旧的编辑区域
+        m_rBgLayout->removeWidget(m_noteControl.getCurCard()->getNoteEdit());
+    }
+    //管理卡片，更新编辑区域
+    m_noteControl.appendCard(newNoteCard);
+
+    //添加新的编辑区域
+    m_rBgLayout->addWidget(m_noteControl.getCurNoteEdit());
+
+    //给卡片和编辑区域添加布局,添加笔记和卡片的顺序不能颠倒，先笔记再卡片
+    m_noteCardListLayout->insertWidget(0,m_noteControl.getCurCard());
+
+    //信号与槽
+    //笔记标题与对应卡片标题的信号槽交互
+    connect(w->getHeadLineEdit(),&QLineEdit::textChanged,
+            newNoteCard,&NoteCard::slotchangeHeadLine);
+    //卡片和卡片管理
+    connect(newNoteCard,&NoteCard::changeCardAndNoteEdit,
+            this,&MainWin::slotChangeNoteShow);
 }
 
 //----------------
@@ -92,8 +117,27 @@ void MainWin::updateNoteCardListShow(NoteCard *newNoteCard)
 //----------------
 void MainWin::slotAddBtnClicked()
 {
-    //在笔记列表中添加新的一项
-    addNewToNoteList();
+    addNewCardAndNote();
+}
 
-    //打开新的笔记
+//----------------
+//切换笔记和卡片
+//----------------
+void MainWin::slotChangeNoteShow(NoteCard *card)
+{
+    if(card == m_noteControl.getCurCard())
+    {
+        return;
+    }
+
+    m_noteControl.getCurNoteEdit()->hide();//隐藏界面上旧的编辑区域
+
+    m_noteControl.setCurCard(card);//管理卡片，更新编辑区域
+
+    m_noteControl.getCurNoteEdit()->show();//显示当前编辑区域
+}
+
+void MainWin::closeEvent(QCloseEvent *event)
+{
+
 }

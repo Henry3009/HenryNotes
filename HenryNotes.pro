@@ -30,14 +30,22 @@ SOURCES += \
     mainwin.cpp \
     background.cpp \
     serchlineedit.cpp \
-    notecard.cpp
+    notecard.cpp \
+    noteeditwidget.cpp \
+    memorymanagercontrol.cpp \
+    notecontrol.cpp \
+    notemodel.cpp
 
 HEADERS += \
         mainwindow.h \
     mainwin.h \
     background.h \
     serchlineedit.h \
-    notecard.h
+    notecard.h \
+    noteeditwidget.h \
+    memorymanagercontrol.h \
+    notecontrol.h \
+    notemodel.h
 
 FORMS += \
         mainwindow.ui

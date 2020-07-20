@@ -4,6 +4,8 @@
 #include <QLineEdit>
 #include <QMouseEvent>
 
+#define WIDTH_OF_NOTESERCH 50
+
 class SerchLineEdit : public QLineEdit
 {
     Q_OBJECT

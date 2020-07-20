@@ -5,8 +5,17 @@ INPUT(
 ./release\background.o
 ./release\serchlineedit.o
 ./release\notecard.o
+./release\noteeditwidget.o
+./release\memorymanagercontrol.o
+./release\notecontrol.o
+./release\notemodel.o
 ./release\qrc_icon.o
 ./release\moc_mainwindow.o
 ./release\moc_mainwin.o
 ./release\moc_serchlineedit.o
+./release\moc_notecard.o
+./release\moc_noteeditwidget.o
+./release\moc_memorymanagercontrol.o
+./release\moc_notecontrol.o
+./release\moc_notemodel.o
 );

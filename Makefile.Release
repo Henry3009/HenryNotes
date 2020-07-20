@@ -50,31 +50,57 @@ SOURCES       = main.cpp \
 		mainwin.cpp \
 		background.cpp \
 		serchlineedit.cpp \
-		notecard.cpp release\qrc_icon.cpp \
+		notecard.cpp \
+		noteeditwidget.cpp \
+		memorymanagercontrol.cpp \
+		notecontrol.cpp \
+		notemodel.cpp release\qrc_icon.cpp \
 		release\moc_mainwindow.cpp \
 		release\moc_mainwin.cpp \
-		release\moc_serchlineedit.cpp
+		release\moc_serchlineedit.cpp \
+		release\moc_notecard.cpp \
+		release\moc_noteeditwidget.cpp \
+		release\moc_memorymanagercontrol.cpp \
+		release\moc_notecontrol.cpp \
+		release\moc_notemodel.cpp
 OBJECTS       = release/main.o \
 		release/mainwindow.o \
 		release/mainwin.o \
 		release/background.o \
 		release/serchlineedit.o \
 		release/notecard.o \
+		release/noteeditwidget.o \
+		release/memorymanagercontrol.o \
+		release/notecontrol.o \
+		release/notemodel.o \
 		release/qrc_icon.o \
 		release/moc_mainwindow.o \
 		release/moc_mainwin.o \
-		release/moc_serchlineedit.o
+		release/moc_serchlineedit.o \
+		release/moc_notecard.o \
+		release/moc_noteeditwidget.o \
+		release/moc_memorymanagercontrol.o \
+		release/moc_notecontrol.o \
+		release/moc_notemodel.o
 
 DIST          =  mainwindow.h \
 		mainwin.h \
 		background.h \
 		serchlineedit.h \
-		notecard.h main.cpp \
+		notecard.h \
+		noteeditwidget.h \
+		memorymanagercontrol.h \
+		notecontrol.h \
+		notemodel.h main.cpp \
 		mainwindow.cpp \
 		mainwin.cpp \
 		background.cpp \
 		serchlineedit.cpp \
-		notecard.cpp
+		notecard.cpp \
+		noteeditwidget.cpp \
+		memorymanagercontrol.cpp \
+		notecontrol.cpp \
+		notemodel.cpp
 QMAKE_TARGET  = HenryNotes
 DESTDIR        = release\ #avoid trailing-slash linebreak
 TARGET         = HenryNotes.exe
@@ -94,10 +120,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) HenryNotes.zip $(SOURCES) $(DIST) HenryNotes.pro ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\spec_pre.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\qdevice.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\device_config.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\common\sanitize.conf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\common\gcc-base.conf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\common\g++-base.conf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\common\angle.conf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\common\windows-vulkan.conf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\common\g++-win32.conf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\qconfig.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3danimation.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3danimation_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dcore.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dcore_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dextras.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dextras_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dinput.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dinput_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dlogic.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dlogic_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dquick.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dquick_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dquickanimation.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dquickanimation_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dquickextras.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dquickextras_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dquickinput.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dquickinput_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dquickrender.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dquickrender_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dquickscene2d.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dquickscene2d_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3drender.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3drender_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_accessibility_support_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_axbase.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_axbase_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_axcontainer.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_axcontainer_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_axserver.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_axserver_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_bluetooth.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_bluetooth_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_bootstrap_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_concurrent.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_concurrent_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_core.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_core_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_dbus.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_dbus_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_designer.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_designer_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_designercomponents_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_devicediscovery_support_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_edid_support_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_egl_support_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_fb_support_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_fontdatabase_support_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_gamepad.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_gamepad_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_gui.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_gui_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_help.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_help_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_location.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_location_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_multimedia.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_multimedia_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_multimediawidgets.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_multimediawidgets_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_network.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_network_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_nfc.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_nfc_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_opengl.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_opengl_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_openglextensions.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_openglextensions_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_packetprotocol_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_platformcompositor_support_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_positioning.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_positioning_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_positioningquick.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_positioningquick_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_printsupport.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_printsupport_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_qml.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_qml_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_qmldebug_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_qmldevtools_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_qmltest.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_qmltest_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_quick.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_quick_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_quickcontrols2.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_quickcontrols2_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_quickparticles_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_quicktemplates2_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_quickwidgets.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_quickwidgets_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_scxml.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_scxml_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_sensors.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_sensors_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_serialbus.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_serialbus_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_serialport.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_serialport_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_sql.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_sql_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_svg.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_svg_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_testlib.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_testlib_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_texttospeech.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_texttospeech_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_theme_support_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_uiplugin.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_uitools.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_uitools_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_webchannel.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_webchannel_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_websockets.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_websockets_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_widgets.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_widgets_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_winextras.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_winextras_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_xml.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_xml_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_xmlpatterns.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_xmlpatterns_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\qt_functions.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\qt_config.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\win32-g++\qmake.conf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\spec_post.prf .qmake.stash ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\exclusive_builds.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\toolchain.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\default_pre.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\win32\default_pre.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\resolve_config.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\exclusive_builds_post.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\default_post.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\build_pass.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\qml_debug.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\precompile_header.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\warn_on.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\qt.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\resources.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\moc.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\win32\opengl.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\uic.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\qmake_use.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\file_copies.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\win32\windows.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\testcase_targets.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\exceptions.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\yacc.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\lex.prf HenryNotes.pro icon.qrc ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\lib\qtmain.prl ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\lib\Qt5Widgets.prl ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\lib\Qt5Gui.prl ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\lib\Qt5Core.prl   icon.qrc ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\data\dummy.cpp mainwindow.h mainwin.h background.h serchlineedit.h notecard.h  main.cpp mainwindow.cpp mainwin.cpp background.cpp serchlineedit.cpp notecard.cpp mainwindow.ui    
+	$(ZIP) HenryNotes.zip $(SOURCES) $(DIST) HenryNotes.pro ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\spec_pre.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\qdevice.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\device_config.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\common\sanitize.conf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\common\gcc-base.conf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\common\g++-base.conf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\common\angle.conf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\common\windows-vulkan.conf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\common\g++-win32.conf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\qconfig.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3danimation.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3danimation_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dcore.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dcore_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dextras.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dextras_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dinput.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dinput_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dlogic.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dlogic_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dquick.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dquick_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dquickanimation.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dquickanimation_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dquickextras.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dquickextras_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dquickinput.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dquickinput_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dquickrender.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dquickrender_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dquickscene2d.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3dquickscene2d_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3drender.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_3drender_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_accessibility_support_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_axbase.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_axbase_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_axcontainer.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_axcontainer_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_axserver.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_axserver_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_bluetooth.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_bluetooth_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_bootstrap_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_concurrent.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_concurrent_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_core.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_core_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_dbus.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_dbus_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_designer.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_designer_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_designercomponents_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_devicediscovery_support_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_edid_support_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_egl_support_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_fb_support_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_fontdatabase_support_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_gamepad.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_gamepad_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_gui.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_gui_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_help.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_help_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_location.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_location_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_multimedia.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_multimedia_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_multimediawidgets.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_multimediawidgets_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_network.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_network_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_nfc.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_nfc_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_opengl.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_opengl_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_openglextensions.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_openglextensions_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_packetprotocol_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_platformcompositor_support_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_positioning.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_positioning_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_positioningquick.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_positioningquick_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_printsupport.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_printsupport_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_qml.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_qml_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_qmldebug_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_qmldevtools_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_qmltest.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_qmltest_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_quick.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_quick_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_quickcontrols2.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_quickcontrols2_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_quickparticles_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_quicktemplates2_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_quickwidgets.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_quickwidgets_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_scxml.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_scxml_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_sensors.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_sensors_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_serialbus.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_serialbus_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_serialport.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_serialport_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_sql.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_sql_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_svg.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_svg_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_testlib.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_testlib_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_texttospeech.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_texttospeech_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_theme_support_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_uiplugin.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_uitools.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_uitools_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_webchannel.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_webchannel_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_websockets.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_websockets_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_widgets.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_widgets_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_winextras.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_winextras_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_xml.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_xml_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_xmlpatterns.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\modules\qt_lib_xmlpatterns_private.pri ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\qt_functions.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\qt_config.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\win32-g++\qmake.conf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\spec_post.prf .qmake.stash ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\exclusive_builds.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\toolchain.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\default_pre.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\win32\default_pre.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\resolve_config.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\exclusive_builds_post.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\default_post.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\build_pass.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\qml_debug.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\precompile_header.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\warn_on.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\qt.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\resources.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\moc.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\win32\opengl.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\uic.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\qmake_use.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\file_copies.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\win32\windows.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\testcase_targets.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\exceptions.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\yacc.prf ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\lex.prf HenryNotes.pro icon.qrc ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\lib\qtmain.prl ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\lib\Qt5Widgets.prl ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\lib\Qt5Gui.prl ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\lib\Qt5Core.prl   icon.qrc ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\data\dummy.cpp mainwindow.h mainwin.h background.h serchlineedit.h notecard.h noteeditwidget.h memorymanagercontrol.h notecontrol.h notemodel.h  main.cpp mainwindow.cpp mainwin.cpp background.cpp serchlineedit.cpp notecard.cpp noteeditwidget.cpp memorymanagercontrol.cpp notecontrol.cpp notemodel.cpp mainwindow.ui    
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\main.o release\mainwindow.o release\mainwin.o release\background.o release\serchlineedit.o release\notecard.o release\qrc_icon.o release\moc_mainwindow.o release\moc_mainwin.o release\moc_serchlineedit.o
+	-$(DEL_FILE) release\main.o release\mainwindow.o release\mainwin.o release\background.o release\serchlineedit.o release\notecard.o release\noteeditwidget.o release\memorymanagercontrol.o release\notecontrol.o release\notemodel.o release\qrc_icon.o release\moc_mainwindow.o release\moc_mainwin.o release\moc_serchlineedit.o release\moc_notecard.o release\moc_noteeditwidget.o release\moc_memorymanagercontrol.o release\moc_notecontrol.o release\moc_notemodel.o
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -129,9 +155,9 @@ compiler_moc_predefs_clean:
 release/moc_predefs.h: ../../../SoftWare/Qt5/5.11.3/mingw53_32/mkspecs/features/data/dummy.cpp
 	g++ -fno-keep-inline-dllexport -O2 -std=gnu++11 -Wall -W -Wextra -dM -E -o release\moc_predefs.h ..\..\..\SoftWare\Qt5\5.11.3\mingw53_32\mkspecs\features\data\dummy.cpp
 
-compiler_moc_header_make_all: release/moc_mainwindow.cpp release/moc_mainwin.cpp release/moc_serchlineedit.cpp
+compiler_moc_header_make_all: release/moc_mainwindow.cpp release/moc_mainwin.cpp release/moc_serchlineedit.cpp release/moc_notecard.cpp release/moc_noteeditwidget.cpp release/moc_memorymanagercontrol.cpp release/moc_notecontrol.cpp release/moc_notemodel.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) release\moc_mainwindow.cpp release\moc_mainwin.cpp release\moc_serchlineedit.cpp
+	-$(DEL_FILE) release\moc_mainwindow.cpp release\moc_mainwin.cpp release\moc_serchlineedit.cpp release\moc_notecard.cpp release\moc_noteeditwidget.cpp release\moc_memorymanagercontrol.cpp release\moc_notecontrol.cpp release\moc_notemodel.cpp
 release/moc_mainwindow.cpp: ../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QMainWindow \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qmainwindow.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qtwidgetsglobal.h \
@@ -362,22 +388,35 @@ release/moc_mainwin.cpp: background.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpen.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QTextEdit \
 		notecard.h \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLabel \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlabel.h \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QVBoxLayout \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qboxlayout.h \
+		noteeditwidget.h \
+		memorymanagercontrol.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLayout \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlayout.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qboxlayout.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QDateTime \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qdatetime.h \
-		serchlineedit.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QObject \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QWidget \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QVBoxLayout \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLineEdit \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlineedit.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/QPainter \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpainter.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QPushButton \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qabstractbutton.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qicon.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qDebug \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QStatusBar \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qstatusbar.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLabel \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlabel.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QDateTime \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qdatetime.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QDebug \
+		notecontrol.h \
+		notemodel.h \
+		serchlineedit.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QSplitter \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qsplitter.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QHBoxLayout \
@@ -500,6 +539,603 @@ release/moc_serchlineedit.cpp: ../../../SoftWare/Qt5/5.11.3/mingw53_32/include/Q
 		release/moc_predefs.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/bin/moc.exe
 	D:\SoftWare\Qt5\5.11.3\mingw53_32\bin\moc.exe $(DEFINES) --include D:/Documents/QtProjects/HenryNotes/release/moc_predefs.h -ID:/SoftWare/Qt5/5.11.3/mingw53_32/mkspecs/win32-g++ -ID:/Documents/QtProjects/HenryNotes -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include/QtANGLE -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore -ID:/SoftWare/Qt5/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/SoftWare/Qt5/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/SoftWare/Qt5/Tools/mingw530_32/i686-w64-mingw32/include -ID:/SoftWare/Qt5/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/SoftWare/Qt5/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/SoftWare/Qt5/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward serchlineedit.h -o release\moc_serchlineedit.cpp
+
+release/moc_notecard.cpp: noteeditwidget.h \
+		memorymanagercontrol.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLayout \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlayout.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qtwidgetsglobal.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtguiglobal.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qglobal.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qconfig-bootstrapped.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qconfig.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qtcore-config.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsystemdetection.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qprocessordetection.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcompilerdetection.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qtypeinfo.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsysinfo.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qlogging.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qflags.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qbasicatomic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic_bootstrap.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qgenericatomic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic_cxx11.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic_msvc.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qglobalstatic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmutex.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qnumeric.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qversiontagging.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtgui-config.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qtwidgets-config.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobject.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobjectdefs.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qnamespace.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobjectdefs_impl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstring.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qchar.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qbytearray.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qrefcount.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qarraydata.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringliteral.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringalgorithms.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringview.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringbuilder.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qlist.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qalgorithms.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qiterator.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qhashfunctions.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qpair.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qbytearraylist.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringlist.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qregexp.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringmatcher.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcoreevent.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qscopedpointer.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmetatype.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qvarlengtharray.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcontainerfwd.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobject_impl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qsizepolicy.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qrect.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmargins.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsize.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qpoint.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qboxlayout.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qwidget.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qwindowdefs.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qwindowdefs_win.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpaintdevice.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpalette.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qcolor.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qrgb.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qrgba64.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qbrush.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qvector.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qmatrix.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpolygon.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qregion.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qdatastream.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qiodevice.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qline.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtransform.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpainterpath.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qimage.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpixelformat.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpixmap.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsharedpointer.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qshareddata.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qhash.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsharedpointer_impl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qfont.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qfontmetrics.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qfontinfo.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qcursor.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qkeysequence.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qevent.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qvariant.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmap.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qdebug.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qtextstream.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qlocale.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qset.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcontiguouscache.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qurl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qurlquery.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qfile.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qfiledevice.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qvector2d.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtouchdevice.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qgridlayout.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QObject \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/QMouseEvent \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QTextEdit \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qtextedit.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qframe.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtextdocument.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtextoption.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtextcursor.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtextformat.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpen.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QWidget \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QVBoxLayout \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLineEdit \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlineedit.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/QPainter \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpainter.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QPushButton \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qpushbutton.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qabstractbutton.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qicon.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qDebug \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QStatusBar \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qstatusbar.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLabel \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlabel.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QTextBrowser \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qtextbrowser.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QDateTime \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qdatetime.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QDebug \
+		notecard.h \
+		release/moc_predefs.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/bin/moc.exe
+	D:\SoftWare\Qt5\5.11.3\mingw53_32\bin\moc.exe $(DEFINES) --include D:/Documents/QtProjects/HenryNotes/release/moc_predefs.h -ID:/SoftWare/Qt5/5.11.3/mingw53_32/mkspecs/win32-g++ -ID:/Documents/QtProjects/HenryNotes -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include/QtANGLE -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore -ID:/SoftWare/Qt5/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/SoftWare/Qt5/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/SoftWare/Qt5/Tools/mingw530_32/i686-w64-mingw32/include -ID:/SoftWare/Qt5/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/SoftWare/Qt5/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/SoftWare/Qt5/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward notecard.h -o release\moc_notecard.cpp
+
+release/moc_noteeditwidget.cpp: memorymanagercontrol.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLayout \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlayout.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qtwidgetsglobal.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtguiglobal.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qglobal.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qconfig-bootstrapped.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qconfig.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qtcore-config.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsystemdetection.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qprocessordetection.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcompilerdetection.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qtypeinfo.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsysinfo.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qlogging.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qflags.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qbasicatomic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic_bootstrap.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qgenericatomic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic_cxx11.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic_msvc.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qglobalstatic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmutex.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qnumeric.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qversiontagging.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtgui-config.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qtwidgets-config.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobject.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobjectdefs.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qnamespace.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobjectdefs_impl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstring.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qchar.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qbytearray.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qrefcount.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qarraydata.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringliteral.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringalgorithms.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringview.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringbuilder.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qlist.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qalgorithms.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qiterator.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qhashfunctions.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qpair.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qbytearraylist.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringlist.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qregexp.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringmatcher.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcoreevent.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qscopedpointer.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmetatype.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qvarlengtharray.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcontainerfwd.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobject_impl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qsizepolicy.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qrect.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmargins.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsize.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qpoint.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qboxlayout.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qwidget.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qwindowdefs.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qwindowdefs_win.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpaintdevice.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpalette.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qcolor.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qrgb.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qrgba64.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qbrush.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qvector.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qmatrix.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpolygon.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qregion.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qdatastream.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qiodevice.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qline.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtransform.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpainterpath.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qimage.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpixelformat.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpixmap.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsharedpointer.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qshareddata.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qhash.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsharedpointer_impl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qfont.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qfontmetrics.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qfontinfo.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qcursor.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qkeysequence.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qevent.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qvariant.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmap.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qdebug.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qtextstream.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qlocale.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qset.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcontiguouscache.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qurl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qurlquery.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qfile.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qfiledevice.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qvector2d.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtouchdevice.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qgridlayout.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QObject \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/QMouseEvent \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QTextEdit \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qtextedit.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qframe.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtextdocument.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtextoption.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtextcursor.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtextformat.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpen.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QWidget \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QVBoxLayout \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLineEdit \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlineedit.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/QPainter \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpainter.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QPushButton \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qpushbutton.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qabstractbutton.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qicon.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qDebug \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QStatusBar \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qstatusbar.h \
+		noteeditwidget.h \
+		release/moc_predefs.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/bin/moc.exe
+	D:\SoftWare\Qt5\5.11.3\mingw53_32\bin\moc.exe $(DEFINES) --include D:/Documents/QtProjects/HenryNotes/release/moc_predefs.h -ID:/SoftWare/Qt5/5.11.3/mingw53_32/mkspecs/win32-g++ -ID:/Documents/QtProjects/HenryNotes -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include/QtANGLE -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore -ID:/SoftWare/Qt5/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/SoftWare/Qt5/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/SoftWare/Qt5/Tools/mingw530_32/i686-w64-mingw32/include -ID:/SoftWare/Qt5/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/SoftWare/Qt5/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/SoftWare/Qt5/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward noteeditwidget.h -o release\moc_noteeditwidget.cpp
+
+release/moc_memorymanagercontrol.cpp: ../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLayout \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlayout.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qtwidgetsglobal.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtguiglobal.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qglobal.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qconfig-bootstrapped.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qconfig.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qtcore-config.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsystemdetection.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qprocessordetection.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcompilerdetection.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qtypeinfo.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsysinfo.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qlogging.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qflags.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qbasicatomic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic_bootstrap.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qgenericatomic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic_cxx11.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic_msvc.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qglobalstatic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmutex.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qnumeric.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qversiontagging.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtgui-config.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qtwidgets-config.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobject.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobjectdefs.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qnamespace.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobjectdefs_impl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstring.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qchar.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qbytearray.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qrefcount.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qarraydata.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringliteral.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringalgorithms.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringview.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringbuilder.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qlist.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qalgorithms.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qiterator.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qhashfunctions.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qpair.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qbytearraylist.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringlist.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qregexp.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringmatcher.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcoreevent.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qscopedpointer.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmetatype.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qvarlengtharray.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcontainerfwd.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobject_impl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qsizepolicy.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qrect.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmargins.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsize.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qpoint.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qboxlayout.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qwidget.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qwindowdefs.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qwindowdefs_win.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpaintdevice.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpalette.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qcolor.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qrgb.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qrgba64.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qbrush.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qvector.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qmatrix.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpolygon.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qregion.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qdatastream.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qiodevice.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qline.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtransform.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpainterpath.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qimage.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpixelformat.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpixmap.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsharedpointer.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qshareddata.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qhash.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsharedpointer_impl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qfont.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qfontmetrics.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qfontinfo.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qcursor.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qkeysequence.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qevent.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qvariant.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmap.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qdebug.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qtextstream.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qlocale.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qset.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcontiguouscache.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qurl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qurlquery.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qfile.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qfiledevice.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qvector2d.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtouchdevice.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qgridlayout.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QObject \
+		memorymanagercontrol.h \
+		release/moc_predefs.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/bin/moc.exe
+	D:\SoftWare\Qt5\5.11.3\mingw53_32\bin\moc.exe $(DEFINES) --include D:/Documents/QtProjects/HenryNotes/release/moc_predefs.h -ID:/SoftWare/Qt5/5.11.3/mingw53_32/mkspecs/win32-g++ -ID:/Documents/QtProjects/HenryNotes -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include/QtANGLE -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore -ID:/SoftWare/Qt5/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/SoftWare/Qt5/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/SoftWare/Qt5/Tools/mingw530_32/i686-w64-mingw32/include -ID:/SoftWare/Qt5/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/SoftWare/Qt5/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/SoftWare/Qt5/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward memorymanagercontrol.h -o release\moc_memorymanagercontrol.cpp
+
+release/moc_notecontrol.cpp: notecard.h \
+		noteeditwidget.h \
+		memorymanagercontrol.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLayout \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlayout.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qtwidgetsglobal.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtguiglobal.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qglobal.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qconfig-bootstrapped.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qconfig.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qtcore-config.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsystemdetection.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qprocessordetection.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcompilerdetection.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qtypeinfo.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsysinfo.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qlogging.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qflags.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qbasicatomic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic_bootstrap.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qgenericatomic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic_cxx11.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic_msvc.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qglobalstatic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmutex.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qnumeric.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qversiontagging.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtgui-config.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qtwidgets-config.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobject.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobjectdefs.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qnamespace.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobjectdefs_impl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstring.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qchar.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qbytearray.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qrefcount.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qarraydata.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringliteral.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringalgorithms.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringview.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringbuilder.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qlist.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qalgorithms.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qiterator.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qhashfunctions.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qpair.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qbytearraylist.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringlist.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qregexp.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringmatcher.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcoreevent.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qscopedpointer.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmetatype.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qvarlengtharray.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcontainerfwd.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobject_impl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qsizepolicy.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qrect.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmargins.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsize.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qpoint.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qboxlayout.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qwidget.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qwindowdefs.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qwindowdefs_win.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpaintdevice.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpalette.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qcolor.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qrgb.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qrgba64.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qbrush.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qvector.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qmatrix.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpolygon.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qregion.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qdatastream.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qiodevice.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qline.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtransform.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpainterpath.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qimage.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpixelformat.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpixmap.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsharedpointer.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qshareddata.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qhash.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsharedpointer_impl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qfont.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qfontmetrics.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qfontinfo.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qcursor.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qkeysequence.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qevent.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qvariant.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmap.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qdebug.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qtextstream.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qlocale.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qset.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcontiguouscache.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qurl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qurlquery.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qfile.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qfiledevice.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qvector2d.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtouchdevice.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qgridlayout.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QObject \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/QMouseEvent \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QTextEdit \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qtextedit.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qframe.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtextdocument.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtextoption.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtextcursor.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtextformat.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpen.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QWidget \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QVBoxLayout \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLineEdit \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlineedit.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/QPainter \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpainter.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QPushButton \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qpushbutton.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qabstractbutton.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qicon.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qDebug \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QStatusBar \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qstatusbar.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLabel \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlabel.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QTextBrowser \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qtextbrowser.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QDateTime \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qdatetime.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QDebug \
+		notemodel.h \
+		notecontrol.h \
+		release/moc_predefs.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/bin/moc.exe
+	D:\SoftWare\Qt5\5.11.3\mingw53_32\bin\moc.exe $(DEFINES) --include D:/Documents/QtProjects/HenryNotes/release/moc_predefs.h -ID:/SoftWare/Qt5/5.11.3/mingw53_32/mkspecs/win32-g++ -ID:/Documents/QtProjects/HenryNotes -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include/QtANGLE -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore -ID:/SoftWare/Qt5/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/SoftWare/Qt5/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/SoftWare/Qt5/Tools/mingw530_32/i686-w64-mingw32/include -ID:/SoftWare/Qt5/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/SoftWare/Qt5/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/SoftWare/Qt5/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward notecontrol.h -o release\moc_notecontrol.cpp
+
+release/moc_notemodel.cpp: ../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QObject \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobject.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobjectdefs.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qnamespace.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qglobal.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qconfig-bootstrapped.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qconfig.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qtcore-config.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsystemdetection.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qprocessordetection.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcompilerdetection.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qtypeinfo.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsysinfo.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qlogging.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qflags.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qbasicatomic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic_bootstrap.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qgenericatomic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic_cxx11.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic_msvc.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qglobalstatic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmutex.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qnumeric.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qversiontagging.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobjectdefs_impl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstring.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qchar.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qbytearray.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qrefcount.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qarraydata.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringliteral.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringalgorithms.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringview.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringbuilder.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qlist.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qalgorithms.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qiterator.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qhashfunctions.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qpair.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qbytearraylist.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringlist.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qregexp.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringmatcher.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcoreevent.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qscopedpointer.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmetatype.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qvarlengtharray.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcontainerfwd.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobject_impl.h \
+		notemodel.h \
+		release/moc_predefs.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/bin/moc.exe
+	D:\SoftWare\Qt5\5.11.3\mingw53_32\bin\moc.exe $(DEFINES) --include D:/Documents/QtProjects/HenryNotes/release/moc_predefs.h -ID:/SoftWare/Qt5/5.11.3/mingw53_32/mkspecs/win32-g++ -ID:/Documents/QtProjects/HenryNotes -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include/QtANGLE -ID:/SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore -ID:/SoftWare/Qt5/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/SoftWare/Qt5/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/SoftWare/Qt5/Tools/mingw530_32/i686-w64-mingw32/include -ID:/SoftWare/Qt5/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/SoftWare/Qt5/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/SoftWare/Qt5/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward notemodel.h -o release\moc_notemodel.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -641,22 +1277,35 @@ release/main.o: main.cpp mainwin.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpen.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QTextEdit \
 		notecard.h \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLabel \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlabel.h \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QVBoxLayout \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qboxlayout.h \
+		noteeditwidget.h \
+		memorymanagercontrol.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLayout \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlayout.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qboxlayout.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QDateTime \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qdatetime.h \
-		serchlineedit.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QObject \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QWidget \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QVBoxLayout \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLineEdit \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlineedit.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/QPainter \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpainter.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QPushButton \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qabstractbutton.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qicon.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qDebug \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QStatusBar \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qstatusbar.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLabel \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlabel.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QDateTime \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qdatetime.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QDebug \
+		notecontrol.h \
+		notemodel.h \
+		serchlineedit.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QSplitter \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qsplitter.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QHBoxLayout \
@@ -928,22 +1577,35 @@ release/mainwin.o: mainwin.cpp mainwin.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpen.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QTextEdit \
 		notecard.h \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLabel \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlabel.h \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QVBoxLayout \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qboxlayout.h \
+		noteeditwidget.h \
+		memorymanagercontrol.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLayout \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlayout.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qboxlayout.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qgridlayout.h \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QDateTime \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qdatetime.h \
-		serchlineedit.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QObject \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QWidget \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QVBoxLayout \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLineEdit \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlineedit.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/QPainter \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpainter.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QPushButton \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qabstractbutton.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qicon.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qDebug \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QStatusBar \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qstatusbar.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLabel \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlabel.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QDateTime \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qdatetime.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QDebug \
+		notecontrol.h \
+		notemodel.h \
+		serchlineedit.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QSplitter \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qsplitter.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QHBoxLayout
@@ -1181,8 +1843,10 @@ release/serchlineedit.o: serchlineedit.cpp serchlineedit.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\serchlineedit.o serchlineedit.cpp
 
 release/notecard.o: notecard.cpp notecard.h \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLabel \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlabel.h \
+		noteeditwidget.h \
+		memorymanagercontrol.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLayout \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlayout.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qtwidgetsglobal.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtguiglobal.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qglobal.h \
@@ -1208,14 +1872,10 @@ release/notecard.o: notecard.cpp notecard.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qversiontagging.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtgui-config.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qtwidgets-config.h \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qframe.h \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qwidget.h \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qwindowdefs.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobject.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobjectdefs.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qnamespace.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobjectdefs_impl.h \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qwindowdefs_win.h \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobject.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstring.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qchar.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qbytearray.h \
@@ -1240,11 +1900,17 @@ release/notecard.o: notecard.cpp notecard.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qvarlengtharray.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcontainerfwd.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobject_impl.h \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmargins.h \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpaintdevice.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qsizepolicy.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qrect.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmargins.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsize.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qpoint.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qboxlayout.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qwidget.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qwindowdefs.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qwindowdefs_win.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpaintdevice.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpalette.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qcolor.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qrgb.h \
@@ -1269,7 +1935,6 @@ release/notecard.o: notecard.cpp notecard.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qfont.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qfontmetrics.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qfontinfo.h \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qsizepolicy.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qcursor.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qkeysequence.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qevent.h \
@@ -1286,23 +1951,483 @@ release/notecard.o: notecard.cpp notecard.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qfiledevice.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qvector2d.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtouchdevice.h \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QTextBrowser \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qtextbrowser.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qgridlayout.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QObject \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/QMouseEvent \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QTextEdit \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qtextedit.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qframe.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtextdocument.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtextoption.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtextcursor.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtextformat.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpen.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QWidget \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QVBoxLayout \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qboxlayout.h \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlayout.h \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlayoutitem.h \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qgridlayout.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLineEdit \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlineedit.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/QPainter \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpainter.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QPushButton \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qpushbutton.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qabstractbutton.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qicon.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qDebug \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QStatusBar \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qstatusbar.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLabel \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlabel.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QTextBrowser \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qtextbrowser.h \
 		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QDateTime \
-		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qdatetime.h
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qdatetime.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\notecard.o notecard.cpp
+
+release/noteeditwidget.o: noteeditwidget.cpp noteeditwidget.h \
+		memorymanagercontrol.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLayout \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlayout.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qtwidgetsglobal.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtguiglobal.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qglobal.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qconfig-bootstrapped.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qconfig.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qtcore-config.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsystemdetection.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qprocessordetection.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcompilerdetection.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qtypeinfo.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsysinfo.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qlogging.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qflags.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qbasicatomic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic_bootstrap.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qgenericatomic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic_cxx11.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic_msvc.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qglobalstatic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmutex.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qnumeric.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qversiontagging.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtgui-config.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qtwidgets-config.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobject.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobjectdefs.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qnamespace.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobjectdefs_impl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstring.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qchar.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qbytearray.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qrefcount.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qarraydata.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringliteral.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringalgorithms.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringview.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringbuilder.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qlist.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qalgorithms.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qiterator.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qhashfunctions.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qpair.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qbytearraylist.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringlist.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qregexp.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringmatcher.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcoreevent.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qscopedpointer.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmetatype.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qvarlengtharray.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcontainerfwd.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobject_impl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qsizepolicy.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qrect.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmargins.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsize.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qpoint.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qboxlayout.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qwidget.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qwindowdefs.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qwindowdefs_win.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpaintdevice.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpalette.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qcolor.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qrgb.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qrgba64.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qbrush.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qvector.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qmatrix.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpolygon.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qregion.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qdatastream.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qiodevice.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qline.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtransform.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpainterpath.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qimage.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpixelformat.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpixmap.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsharedpointer.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qshareddata.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qhash.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsharedpointer_impl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qfont.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qfontmetrics.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qfontinfo.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qcursor.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qkeysequence.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qevent.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qvariant.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmap.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qdebug.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qtextstream.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qlocale.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qset.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcontiguouscache.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qurl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qurlquery.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qfile.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qfiledevice.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qvector2d.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtouchdevice.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qgridlayout.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QObject \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/QMouseEvent \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QTextEdit \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qtextedit.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qframe.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtextdocument.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtextoption.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtextcursor.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtextformat.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpen.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QWidget \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QVBoxLayout \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLineEdit \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlineedit.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/QPainter \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpainter.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QPushButton \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qpushbutton.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qabstractbutton.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qicon.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qDebug \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QStatusBar \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qstatusbar.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\noteeditwidget.o noteeditwidget.cpp
+
+release/memorymanagercontrol.o: memorymanagercontrol.cpp memorymanagercontrol.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLayout \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlayout.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qtwidgetsglobal.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtguiglobal.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qglobal.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qconfig-bootstrapped.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qconfig.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qtcore-config.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsystemdetection.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qprocessordetection.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcompilerdetection.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qtypeinfo.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsysinfo.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qlogging.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qflags.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qbasicatomic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic_bootstrap.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qgenericatomic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic_cxx11.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic_msvc.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qglobalstatic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmutex.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qnumeric.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qversiontagging.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtgui-config.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qtwidgets-config.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobject.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobjectdefs.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qnamespace.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobjectdefs_impl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstring.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qchar.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qbytearray.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qrefcount.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qarraydata.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringliteral.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringalgorithms.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringview.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringbuilder.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qlist.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qalgorithms.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qiterator.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qhashfunctions.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qpair.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qbytearraylist.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringlist.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qregexp.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringmatcher.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcoreevent.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qscopedpointer.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmetatype.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qvarlengtharray.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcontainerfwd.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobject_impl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qsizepolicy.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qrect.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmargins.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsize.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qpoint.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qboxlayout.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qwidget.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qwindowdefs.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qwindowdefs_win.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpaintdevice.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpalette.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qcolor.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qrgb.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qrgba64.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qbrush.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qvector.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qmatrix.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpolygon.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qregion.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qdatastream.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qiodevice.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qline.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtransform.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpainterpath.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qimage.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpixelformat.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpixmap.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsharedpointer.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qshareddata.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qhash.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsharedpointer_impl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qfont.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qfontmetrics.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qfontinfo.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qcursor.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qkeysequence.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qevent.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qvariant.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmap.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qdebug.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qtextstream.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qlocale.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qset.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcontiguouscache.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qurl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qurlquery.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qfile.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qfiledevice.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qvector2d.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtouchdevice.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qgridlayout.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QObject
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\memorymanagercontrol.o memorymanagercontrol.cpp
+
+release/notecontrol.o: notecontrol.cpp notecontrol.h \
+		notecard.h \
+		noteeditwidget.h \
+		memorymanagercontrol.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLayout \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlayout.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qtwidgetsglobal.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtguiglobal.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qglobal.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qconfig-bootstrapped.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qconfig.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qtcore-config.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsystemdetection.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qprocessordetection.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcompilerdetection.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qtypeinfo.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsysinfo.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qlogging.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qflags.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qbasicatomic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic_bootstrap.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qgenericatomic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic_cxx11.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic_msvc.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qglobalstatic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmutex.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qnumeric.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qversiontagging.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtgui-config.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qtwidgets-config.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobject.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobjectdefs.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qnamespace.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobjectdefs_impl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstring.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qchar.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qbytearray.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qrefcount.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qarraydata.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringliteral.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringalgorithms.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringview.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringbuilder.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qlist.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qalgorithms.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qiterator.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qhashfunctions.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qpair.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qbytearraylist.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringlist.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qregexp.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringmatcher.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcoreevent.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qscopedpointer.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmetatype.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qvarlengtharray.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcontainerfwd.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobject_impl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qsizepolicy.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qrect.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmargins.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsize.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qpoint.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qboxlayout.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qwidget.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qwindowdefs.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qwindowdefs_win.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpaintdevice.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpalette.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qcolor.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qrgb.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qrgba64.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qbrush.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qvector.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qmatrix.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpolygon.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qregion.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qdatastream.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qiodevice.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qline.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtransform.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpainterpath.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qimage.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpixelformat.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpixmap.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsharedpointer.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qshareddata.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qhash.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsharedpointer_impl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qfont.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qfontmetrics.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qfontinfo.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qcursor.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qkeysequence.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qevent.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qvariant.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmap.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qdebug.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qtextstream.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qlocale.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qset.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcontiguouscache.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qurl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qurlquery.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qfile.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qfiledevice.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qvector2d.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtouchdevice.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qgridlayout.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QObject \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/QMouseEvent \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QTextEdit \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qtextedit.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qframe.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtextdocument.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtextoption.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtextcursor.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qtextformat.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpen.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QWidget \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QVBoxLayout \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLineEdit \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlineedit.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/QPainter \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qpainter.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QPushButton \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qpushbutton.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qabstractbutton.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtGui/qicon.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qDebug \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QStatusBar \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qstatusbar.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QLabel \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qlabel.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/QTextBrowser \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtWidgets/qtextbrowser.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QDateTime \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qdatetime.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QDebug \
+		notemodel.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\notecontrol.o notecontrol.cpp
+
+release/notemodel.o: notemodel.cpp notemodel.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/QObject \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobject.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobjectdefs.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qnamespace.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qglobal.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qconfig-bootstrapped.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qconfig.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qtcore-config.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsystemdetection.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qprocessordetection.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcompilerdetection.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qtypeinfo.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qsysinfo.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qlogging.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qflags.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qbasicatomic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic_bootstrap.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qgenericatomic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic_cxx11.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qatomic_msvc.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qglobalstatic.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmutex.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qnumeric.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qversiontagging.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobjectdefs_impl.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstring.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qchar.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qbytearray.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qrefcount.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qarraydata.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringliteral.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringalgorithms.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringview.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringbuilder.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qlist.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qalgorithms.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qiterator.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qhashfunctions.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qpair.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qbytearraylist.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringlist.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qregexp.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qstringmatcher.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcoreevent.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qscopedpointer.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qmetatype.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qvarlengtharray.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qcontainerfwd.h \
+		../../../SoftWare/Qt5/5.11.3/mingw53_32/include/QtCore/qobject_impl.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\notemodel.o notemodel.cpp
 
 release/qrc_icon.o: release/qrc_icon.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\qrc_icon.o release\qrc_icon.cpp
@@ -1315,6 +2440,21 @@ release/moc_mainwin.o: release/moc_mainwin.cpp
 
 release/moc_serchlineedit.o: release/moc_serchlineedit.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_serchlineedit.o release\moc_serchlineedit.cpp
+
+release/moc_notecard.o: release/moc_notecard.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_notecard.o release\moc_notecard.cpp
+
+release/moc_noteeditwidget.o: release/moc_noteeditwidget.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_noteeditwidget.o release\moc_noteeditwidget.cpp
+
+release/moc_memorymanagercontrol.o: release/moc_memorymanagercontrol.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_memorymanagercontrol.o release\moc_memorymanagercontrol.cpp
+
+release/moc_notecontrol.o: release/moc_notecontrol.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_notecontrol.o release\moc_notecontrol.cpp
+
+release/moc_notemodel.o: release/moc_notemodel.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_notemodel.o release\moc_notemodel.cpp
 
 ####### Install
 

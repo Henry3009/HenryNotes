@@ -1,6 +1,6 @@
 #include "notecard.h"
 
-NoteCard::NoteCard(QWidget *parent):QTextBrowser(parent)
+NoteCard::NoteCard(NoteEditWidget *noteWidget, QWidget *parent):QTextBrowser(parent),m_noteWidget(noteWidget)
 {
     //用于设置笔记卡片背景颜色的画板。
     QPalette p;
@@ -16,6 +16,8 @@ NoteCard::NoteCard(QWidget *parent):QTextBrowser(parent)
 
     //数据初始化
     initData();
+
+    this->installEventFilter(this);
 }
 
 //----------------
@@ -29,6 +31,35 @@ void NoteCard::initData()
     m_noteNameLabel->setText(m_noteName);
     m_createDateLabel->setText(m_createDate);
     m_fixDateLabel->setText(m_fixDate);
+}
+
+void NoteCard::slotchangeHeadLine(const QString &headline)
+{
+    m_noteNameLabel->setText(headline);
+
+    if("" == headline)
+    {
+       m_noteNameLabel->setText("空标题");
+    }
+}
+
+//----------------
+//鼠标点击切换事件
+//----------------
+bool NoteCard::eventFilter(QObject *watched, QEvent *event)
+{
+    if(event->type() == QEvent::MouseButtonPress)
+    {
+        QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
+        if(mouseEvent->button() == Qt::LeftButton)
+        {
+            emit changeCardAndNoteEdit(this);
+            return true;
+        }
+        QTextBrowser::mousePressEvent(mouseEvent);
+    }
+
+    return QTextBrowser::eventFilter(watched,event);
 }
 
 //----------------

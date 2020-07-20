@@ -5,8 +5,17 @@ INPUT(
 ./debug\background.o
 ./debug\serchlineedit.o
 ./debug\notecard.o
+./debug\noteeditwidget.o
+./debug\memorymanagercontrol.o
+./debug\notecontrol.o
+./debug\notemodel.o
 ./debug\qrc_icon.o
 ./debug\moc_mainwindow.o
 ./debug\moc_mainwin.o
 ./debug\moc_serchlineedit.o
+./debug\moc_notecard.o
+./debug\moc_noteeditwidget.o
+./debug\moc_memorymanagercontrol.o
+./debug\moc_notecontrol.o
+./debug\moc_notemodel.o
 );
