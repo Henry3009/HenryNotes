@@ -25,9 +25,11 @@ public:
 
     void setCurCard(NoteCard *card){m_curCard = card;}                              //设置当前活动卡片
 
-private:
     void saveAll();                                                                 //保存所有笔记
 
+    QList<QStringList> readData();                                                  //读取数据
+
+private:
     void setData(QString headline, QString cTime, QString fTime, QString content);  //设置笔记本Model数据
 
 signals:
@@ -38,6 +40,7 @@ private:
     QList<NoteCard *> m_noteCardList;           //笔记卡片列表
     NoteCard *m_curCard;                        //当前卡片
     NoteModel m_noteModel;                      //笔记本model
+    QMap<QString,QString> m_name_cTimeList; //记录笔记本是从哪个文件读取的
 };
 
 #endif // NOTECONTROL_H

@@ -15,7 +15,7 @@ class NoteCard : public QTextBrowser
 {
     Q_OBJECT
 public:
-    NoteCard(NoteEditWidget *noteWidget,QWidget *parent=nullptr);
+    NoteCard(QString headline, QString cTime, QString fTime, NoteEditWidget *noteWidget,QWidget *parent=nullptr);
 
     void setBackGroundColor(const QColor color);        //背景色设置，接受QColor的RGB颜色
 
@@ -25,10 +25,16 @@ public:
 
     NoteEditWidget *getNoteEdit(){return m_noteWidget;}
 
+    QString getCreateDate() const;
+    void setCreateDate(const QString &createDate);
+
+    QString getFixDate() const;
+    void setFixDate(const QString &fixDate);
+
 private:
     void setUI();                                       //UI布局
 
-    void initData();                                    //数据初始化
+    void initData(QString headline,QString cTime,QString fTime);                                    //数据初始化
 
 signals:
     void changeCardAndNoteEdit(NoteCard *card);
@@ -49,6 +55,7 @@ private:
     // QObject interface
 public:
     bool eventFilter(QObject *watched, QEvent *event);
+
 };
 
 #endif // NOTECARD_H

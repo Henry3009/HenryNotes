@@ -1,6 +1,7 @@
 #include "noteeditwidget.h"
 
-NoteEditWidget::NoteEditWidget(QWidget *parent) : QWidget(parent)
+NoteEditWidget::NoteEditWidget(QString headline, QString content, QWidget *parent)
+    : QWidget(parent)
 {
     QPalette p;
     p.setColor(QPalette::Background,Qt::white);
@@ -8,7 +9,7 @@ NoteEditWidget::NoteEditWidget(QWidget *parent) : QWidget(parent)
     setPalette(p);
 
     setUI();
-    setData();
+    setData(headline,content);
 }
 
 NoteEditWidget::~NoteEditWidget()
@@ -66,9 +67,10 @@ void NoteEditWidget::setUI()
     //信号与信号槽
 }
 
-void NoteEditWidget::setData()
+void NoteEditWidget::setData(QString headline, QString content)
 {
-    m_headlineEdit->setText("New Note");
+    m_headlineEdit->setText(headline);
+    m_contentEdit->setText(content);
 }
 
 

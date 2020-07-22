@@ -21,16 +21,18 @@ class NoteEditWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit NoteEditWidget(QWidget *parent = nullptr);
+    explicit NoteEditWidget(QString headline, QString content, QWidget *parent = nullptr);
 
     QLineEdit *getHeadLineEdit(){return m_headlineEdit;}
+
+    QString getContent(){return m_contentEdit->toPlainText();}
 
     ~NoteEditWidget();
 
 private:
     void setUI();
 
-    void setData();
+    void setData(QString headline, QString content);
 
 signals:
 

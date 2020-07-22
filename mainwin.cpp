@@ -13,6 +13,8 @@ MainWin::MainWin()
     //设置UI布局
     setUi();
 //    m_noteControl = NoteControl();
+
+    readData();
 }
 
 MainWin::~MainWin()
@@ -27,7 +29,9 @@ void MainWin::setUi()
     /*背景板和分割线布局*/
     //左右背景板设置
     m_leftBg = new Background(this);
+    m_leftBg->setObjectName("LeftBackground");
     m_rightBg = new Background(this);
+    m_rightBg->setObjectName("RightBackground");
 
     //设置分割线比例为1：4
     this->setStretchFactor(0,1);
@@ -48,6 +52,7 @@ void MainWin::setUi()
     //添加笔记按钮背景布局
     m_addNoteBtnBg = new Background(m_leftBg);
     m_addNoteBtnBg->setFixedHeight(WIDTH_OF_ADDNOTEBTNBG);
+//    m_addNoteBtn->setFixedSize(QSize(m_addNoteBtnBg->width(),m_addNoteBtnBg->height()));
     m_addNoteBtnBg->setBackGroundColor(Qt::gray);
     m_lBgLayout->addWidget(m_addNoteBtnBg);
 
@@ -79,20 +84,20 @@ void MainWin::setUi()
 //----------------
 //添加新的笔记和卡片
 //----------------
-void MainWin::addNewCardAndNote()
+void MainWin::addNewCardAndNote(QString headline,QString cTime,QString fTime,QString content)
 {
     //添加笔记
-    NoteEditWidget *w = new NoteEditWidget(m_rightBg);
+    NoteEditWidget *w = new NoteEditWidget(headline,content,m_rightBg);
 
     //添加卡片
-    NoteCard *newNoteCard = new NoteCard(w,this->m_leftBg);
+    NoteCard *newNoteCard = new NoteCard(headline,cTime,fTime,w,this->m_leftBg);
     newNoteCard->setBackGroundColor(QColor(255,178,115));
 
 
     if(0 != m_noteControl.getCardCount())
     {
-        //删除界面上旧的编辑区域
-        m_rBgLayout->removeWidget(m_noteControl.getCurCard()->getNoteEdit());
+        //隐藏界面上旧的编辑区域
+        m_noteControl.getCurNoteEdit()->hide();
     }
     //管理卡片，更新编辑区域
     m_noteControl.appendCard(newNoteCard);
@@ -110,6 +115,41 @@ void MainWin::addNewCardAndNote()
     //卡片和卡片管理
     connect(newNoteCard,&NoteCard::changeCardAndNoteEdit,
             this,&MainWin::slotChangeNoteShow);
+}
+
+//----------------
+//读数据
+//----------------
+void MainWin::readData()
+{
+    QList<QStringList> data = m_noteControl.readData();
+
+    for(int i=0; i<data.count(); ++i)
+    {
+        QString headline;
+        QString cTime;
+        QString fTime;
+        QString content;
+        headline = data.at(i).at(0);
+        cTime = data.at(i).at(1);
+        fTime = data.at(i).at(2);
+        content = data.at(i).at(3);
+
+        if(headline.isEmpty()||cTime.isEmpty()||fTime.isEmpty())
+        {
+            continue;
+        }
+
+        addNote(headline,cTime,fTime,content);
+    }
+}
+
+//----------------
+//添加笔记（非空白笔记）
+//----------------
+void MainWin::addNote(QString headline, QString cTime, QString fTime, QString content)
+{
+    addNewCardAndNote(headline,cTime,fTime,content);
 }
 
 //----------------
@@ -139,5 +179,5 @@ void MainWin::slotChangeNoteShow(NoteCard *card)
 
 void MainWin::closeEvent(QCloseEvent *event)
 {
-
+    m_noteControl.saveAll();
 }

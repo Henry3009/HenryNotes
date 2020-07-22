@@ -1,0 +1,43 @@
+QTextBrowser[NoteCard = "true"]{
+	border-radius:30px;
+	background: #999999;
+}
+QTextBrowser[NoteCard = "true"]:hover{
+	background: #AAAAAA;
+	position: relative;
+	top:10px;
+	right: 10px;
+}
+
+QTextBrowser#LeftBackground{
+	background: #CCCCCC;
+}
+
+QSplitter::handle{
+	background: #666666;
+}
+
+QTextBrowser#RightBackground{
+	background: #333333;
+}
+
+NoteEditWidget{
+	background: red;
+}
+
+QTextEdit{
+	color:white;
+	font-size:20px;
+	background: #333333;
+	border-style: none;
+}
+
+QTextBrowser#RightBackground QLineEdit{
+	font-size: 25px;
+	font-weight:bold;
+	background: transparent;
+	color: white;
+	/*border-radius: 1px;*/
+	border-top-width: 2px;
+}
+

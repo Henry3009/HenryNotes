@@ -29,10 +29,14 @@ public:
 private:
     void setUi();                                           //UI布局
 
-    void addNewCardAndNote();                               //添加新的笔记和卡片
+    void addNewCardAndNote(QString headline = "New Note", QString cTime = "", QString fTime = "", QString content = "");    //添加新的笔记和卡片
+
+    void readData();                                        //读取数据
+
+    void addNote(QString headline = "New Note", QString cTime = "", QString fTime = "", QString content = "");              //添加笔记（非空白笔记）
 
 private slots:
-    void slotAddBtnClicked();
+    void slotAddBtnClicked();                               //添加笔记（空白）
 
     void slotChangeNoteShow(NoteCard *card);
 

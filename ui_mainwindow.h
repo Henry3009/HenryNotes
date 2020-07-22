@@ -35,6 +35,10 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(439, 375);
+        MainWindow->setStyleSheet(QLatin1String("*{\n"
+"backgroud-color:red;\n"
+"color:red;\n"
+"}"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         verticalLayoutWidget = new QWidget(centralWidget);
